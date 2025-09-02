@@ -43,6 +43,9 @@ public class Medicion {
     @JoinColumn(name = "nutricionista_id", nullable = false)
     private Nutricionista nutricionista;
 
+    // Constructor por defecto requerido por JPA/Jackson
+    public Medicion() {}
+
     // Método para calcular el IMC
     public Double calcularIMC() {
         if (altura == null || peso == null || altura <= 0) {
@@ -96,6 +99,55 @@ public void setFecha(LocalDate fecha) {
 
 public LocalDate getFecha() {
     return fecha;
+}
+
+// Getters y setters adicionales para deserialización JSON y validación
+public Long getId() {
+    return id;
+}
+
+public void setId(Long id) {
+    this.id = id;
+}
+
+public Double getPeso() {
+    return peso;
+}
+
+public void setPeso(Double peso) {
+    this.peso = peso;
+}
+
+public Double getAltura() {
+    return altura;
+}
+
+public void setAltura(Double altura) {
+    this.altura = altura;
+}
+
+public Double getCircunferenciaCintura() {
+    return circunferenciaCintura;
+}
+
+public void setCircunferenciaCintura(Double circunferenciaCintura) {
+    this.circunferenciaCintura = circunferenciaCintura;
+}
+
+public Double getCircunferenciaCadera() {
+    return circunferenciaCadera;
+}
+
+public void setCircunferenciaCadera(Double circunferenciaCadera) {
+    this.circunferenciaCadera = circunferenciaCadera;
+}
+
+public Double getPorcentajeGrasaCorporal() {
+    return porcentajeGrasaCorporal;
+}
+
+public void setPorcentajeGrasaCorporal(Double porcentajeGrasaCorporal) {
+    this.porcentajeGrasaCorporal = porcentajeGrasaCorporal;
 }
 
 }

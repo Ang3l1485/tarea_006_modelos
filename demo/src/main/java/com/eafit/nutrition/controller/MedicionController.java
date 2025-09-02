@@ -66,7 +66,7 @@ public class MedicionController {
         return ResponseEntity.ok(response);
     }
     
-    @PostMapping("/constructor/paciente/{pacienteId}/nutricionista/{nutricionistaId}")
+    @GetMapping("/constructor/paciente/{pacienteId}/nutricionista/{nutricionistaId}")
     public ResponseEntity<Medicion> createMedicionConstructor(
             @PathVariable Long pacienteId, 
             @PathVariable Long nutricionistaId,
